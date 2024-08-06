@@ -1,0 +1,365 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="mtavari racxebi">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;c++;cppm;ixx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="mtavari racxebi\headers">
+      <UniqueIdentifier>{efc7e5b3-e0e3-4270-ba18-fc6279423cc5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="sdk">
+      <UniqueIdentifier>{d31f5e9d-747a-41d8-8d5b-2732e02bc6e1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="sdk\classes">
+      <UniqueIdentifier>{1c7a2a57-8962-4c44-8081-54266c3995c6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="sdk\interfaces">
+      <UniqueIdentifier>{70960c5f-8549-4c66-8ef7-197b1c0fc71b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="sdk\math">
+      <UniqueIdentifier>{04d5724a-496f-4707-864f-41a35c281ec6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="sdk\schema_system">
+      <UniqueIdentifier>{2d0add72-f0d0-49dd-8bd1-95f15e0e89cd}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="sdk\sdl">
+      <UniqueIdentifier>{b122c7a9-5a63-4a86-ab5e-c8fb15568697}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="bibliotekebi romelic gamomadgeba">
+      <UniqueIdentifier>{df44127a-2a36-4c5c-843a-9f9cca5a16dc}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="bibliotekebi romelic gamomadgeba\minhook">
+      <UniqueIdentifier>{8be73eea-ad84-45d1-a728-346002c30358}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="bibliotekebi romelic gamomadgeba\minhook\hde">
+      <UniqueIdentifier>{cea4e77e-eb81-48ff-aa25-61ab7c014035}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="offset shit">
+      <UniqueIdentifier>{7e5f7aa5-244f-4c1d-b78d-ab3287c97ca7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="compiler shit">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;h++;hm;inl;inc;ipp;xsd</Extensions>
+    </Filter>
+    <Filter Include="virtual">
+      <UniqueIdentifier>{0e8eec81-5cd2-46ff-ae66-9a81d35faad3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="bibliotekebi romelic gamomadgeba\fnv1a">
+      <UniqueIdentifier>{e16b7a41-c8f6-4e90-b120-74b2f3ad7ac2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="bibliotekebi romelic gamomadgeba\kiero">
+      <UniqueIdentifier>{8171287f-f748-4dd6-a466-dfdc4695eefe}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="bibliotekebi romelic gamomadgeba\imgui">
+      <UniqueIdentifier>{a0eef5f6-0d4d-4e16-8275-e483ad8818c6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="bibliotekebi romelic gamomadgeba\imgui\backends">
+      <UniqueIdentifier>{8c9c3150-c9e1-4cc1-9cd2-03ce38227e50}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="mtavari racxebi\xakebi">
+      <UniqueIdentifier>{57c65236-0a52-474b-ba70-51c2d46939ea}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="sdk\renderer">
+      <UniqueIdentifier>{96f9498d-a6fc-4133-aba5-a913337ab493}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="mtavari racxebi\cache">
+      <UniqueIdentifier>{cbfc5124-da13-4f7e-b375-45f6acc2d935}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="framework.h">
+      <Filter>compiler shit</Filter>
+    </ClInclude>
+    <ClInclude Include="pch.h">
+      <Filter>compiler shit</Filter>
+    </ClInclude>
+    <ClInclude Include="offsets.hpp">
+      <Filter>offset shit</Filter>
+    </ClInclude>
+    <ClInclude Include="client.dll.hpp">
+      <Filter>offset shit</Filter>
+    </ClInclude>
+    <ClInclude Include="hooks.hpp">
+      <Filter>mtavari racxebi\headers</Filter>
+    </ClInclude>
+    <ClInclude Include="sdk\sdk.hpp">
+      <Filter>sdk</Filter>
+    </ClInclude>
+    <ClInclude Include="sdk\classes\trace.hpp">
+      <Filter>sdk\classes</Filter>
+    </ClInclude>
+    <ClInclude Include="sdk\classes\user_cmd.hpp">
+      <Filter>sdk\classes</Filter>
+    </ClInclude>
+    <ClInclude Include="sdk\classes\entities.hpp">
+      <Filter>sdk\classes</Filter>
+    </ClInclude>
+    <ClInclude Include="sdk\classes\global_vars.hpp">
+      <Filter>sdk\classes</Filter>
+    </ClInclude>
+    <ClInclude Include="sdk\classes\skeleton.hpp">
+      <Filter>sdk\classes</Filter>
+    </ClInclude>
+    <ClInclude Include="sdk\interfaces\i_entity_list.hpp">
+      <Filter>sdk\interfaces</Filter>
+    </ClInclude>
+    <ClInclude Include="sdk\interfaces\i_input_system.hpp">
+      <Filter>sdk\interfaces</Filter>
+    </ClInclude>
+    <ClInclude Include="sdk\interfaces\i_renderer.hpp">
+      <Filter>sdk\interfaces</Filter>
+    </ClInclude>
+    <ClInclude Include="sdk\interfaces\i_schema_system.hpp">
+      <Filter>sdk\interfaces</Filter>
+    </ClInclude>
+    <ClInclude Include="sdk\interfaces\i_trace.hpp">
+      <Filter>sdk\interfaces</Filter>
+    </ClInclude>
+    <ClInclude Include="sdk\interfaces\interfaces.hpp">
+      <Filter>sdk\interfaces</Filter>
+    </ClInclude>
+    <ClInclude Include="sdk\interfaces\i_client.hpp">
+      <Filter>sdk\interfaces</Filter>
+    </ClInclude>
+    <ClInclude Include="sdk\interfaces\i_csgo_input.hpp">
+      <Filter>sdk\interfaces</Filter>
+    </ClInclude>
+    <ClInclude Include="sdk\interfaces\i_engine_client.hpp">
+      <Filter>sdk\interfaces</Filter>
+    </ClInclude>
+    <ClInclude Include="sdk\math\vec3_t.hpp">
+      <Filter>sdk\math</Filter>
+    </ClInclude>
+    <ClInclude Include="sdk\math\vec4_t.hpp">
+      <Filter>sdk\math</Filter>
+    </ClInclude>
+    <ClInclude Include="sdk\math\color_t.hpp">
+      <Filter>sdk\math</Filter>
+    </ClInclude>
+    <ClInclude Include="sdk\math\math.hpp">
+      <Filter>sdk\math</Filter>
+    </ClInclude>
+    <ClInclude Include="sdk\math\vec2_t.hpp">
+      <Filter>sdk\math</Filter>
+    </ClInclude>
+    <ClInclude Include="sdk\sdl\sdl.hpp">
+      <Filter>sdk\sdl</Filter>
+    </ClInclude>
+    <ClInclude Include="minhook\buffer.h">
+      <Filter>bibliotekebi romelic gamomadgeba\minhook</Filter>
+    </ClInclude>
+    <ClInclude Include="minhook\MinHook.h">
+      <Filter>bibliotekebi romelic gamomadgeba\minhook</Filter>
+    </ClInclude>
+    <ClInclude Include="minhook\trampoline.h">
+      <Filter>bibliotekebi romelic gamomadgeba\minhook</Filter>
+    </ClInclude>
+    <ClInclude Include="minhook\hde\pstdint.h">
+      <Filter>bibliotekebi romelic gamomadgeba\minhook\hde</Filter>
+    </ClInclude>
+    <ClInclude Include="minhook\hde\table32.h">
+      <Filter>bibliotekebi romelic gamomadgeba\minhook\hde</Filter>
+    </ClInclude>
+    <ClInclude Include="minhook\hde\table64.h">
+      <Filter>bibliotekebi romelic gamomadgeba\minhook\hde</Filter>
+    </ClInclude>
+    <ClInclude Include="minhook\hde\hde32.h">
+      <Filter>bibliotekebi romelic gamomadgeba\minhook\hde</Filter>
+    </ClInclude>
+    <ClInclude Include="minhook\hde\hde64.h">
+      <Filter>bibliotekebi romelic gamomadgeba\minhook\hde</Filter>
+    </ClInclude>
+    <ClInclude Include="scanner.hpp">
+      <Filter>mtavari racxebi</Filter>
+    </ClInclude>
+    <ClInclude Include="cvar.hpp">
+      <Filter>sdk\interfaces</Filter>
+    </ClInclude>
+    <ClInclude Include="pointer.hpp">
+      <Filter>sdk\interfaces</Filter>
+    </ClInclude>
+    <ClInclude Include="virtual.hpp">
+      <Filter>virtual</Filter>
+    </ClInclude>
+    <ClInclude Include="fnv1a.hpp">
+      <Filter>bibliotekebi romelic gamomadgeba\fnv1a</Filter>
+    </ClInclude>
+    <ClInclude Include="schema_system.hpp">
+      <Filter>sdk\schema_system</Filter>
+    </ClInclude>
+    <ClInclude Include="kiero\kiero.h">
+      <Filter>bibliotekebi romelic gamomadgeba\kiero</Filter>
+    </ClInclude>
+    <ClInclude Include="imgui\imstb_rectpack.h">
+      <Filter>bibliotekebi romelic gamomadgeba\imgui</Filter>
+    </ClInclude>
+    <ClInclude Include="imgui\imstb_textedit.h">
+      <Filter>bibliotekebi romelic gamomadgeba\imgui</Filter>
+    </ClInclude>
+    <ClInclude Include="imgui\imstb_truetype.h">
+      <Filter>bibliotekebi romelic gamomadgeba\imgui</Filter>
+    </ClInclude>
+    <ClInclude Include="imgui\imconfig.h">
+      <Filter>bibliotekebi romelic gamomadgeba\imgui</Filter>
+    </ClInclude>
+    <ClInclude Include="imgui\imgui.h">
+      <Filter>bibliotekebi romelic gamomadgeba\imgui</Filter>
+    </ClInclude>
+    <ClInclude Include="imgui\imgui_internal.h">
+      <Filter>bibliotekebi romelic gamomadgeba\imgui</Filter>
+    </ClInclude>
+    <ClInclude Include="imgui\backends\imgui_impl_win32.h">
+      <Filter>bibliotekebi romelic gamomadgeba\imgui\backends</Filter>
+    </ClInclude>
+    <ClInclude Include="imgui\backends\imgui_impl_dx11.h">
+      <Filter>bibliotekebi romelic gamomadgeba\imgui\backends</Filter>
+    </ClInclude>
+    <ClInclude Include="vmatrix.hpp">
+      <Filter>compiler shit</Filter>
+    </ClInclude>
+    <ClInclude Include="esp.hpp">
+      <Filter>mtavari racxebi\xakebi</Filter>
+    </ClInclude>
+    <ClInclude Include="renderer.hpp">
+      <Filter>sdk\renderer</Filter>
+    </ClInclude>
+    <ClInclude Include="entity_handle.h">
+      <Filter>sdk\classes</Filter>
+    </ClInclude>
+    <ClInclude Include="aimbot.hpp">
+      <Filter>mtavari racxebi\xakebi</Filter>
+    </ClInclude>
+    <ClInclude Include="i_material_system.hpp">
+      <Filter>sdk\interfaces</Filter>
+    </ClInclude>
+    <ClInclude Include="pe64.h">
+      <Filter>compiler shit</Filter>
+    </ClInclude>
+    <ClInclude Include="i_mem_alloc.hpp">
+      <Filter>sdk\interfaces</Filter>
+    </ClInclude>
+    <ClInclude Include="memory.h">
+      <Filter>compiler shit</Filter>
+    </ClInclude>
+    <ClInclude Include="load_materials.hpp">
+      <Filter>mtavari racxebi\cache</Filter>
+    </ClInclude>
+    <ClInclude Include="chams.hpp">
+      <Filter>mtavari racxebi\xakebi</Filter>
+    </ClInclude>
+    <ClInclude Include="CRC.h">
+      <Filter>mtavari racxebi\headers</Filter>
+    </ClInclude>
+    <ClInclude Include="utlbuffer.h">
+      <Filter>sdk</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="dllmain.cpp">
+      <Filter>mtavari racxebi</Filter>
+    </ClCompile>
+    <ClCompile Include="pch.cpp">
+      <Filter>compiler shit</Filter>
+    </ClCompile>
+    <ClCompile Include="hooks.cpp">
+      <Filter>mtavari racxebi</Filter>
+    </ClCompile>
+    <ClCompile Include="sdk\sdk.cpp">
+      <Filter>sdk</Filter>
+    </ClCompile>
+    <ClCompile Include="sdk\classes\trace.cpp">
+      <Filter>sdk\classes</Filter>
+    </ClCompile>
+    <ClCompile Include="sdk\interfaces\interfaces.cpp">
+      <Filter>sdk\interfaces</Filter>
+    </ClCompile>
+    <ClCompile Include="sdk\math\vec4_t.cpp">
+      <Filter>sdk\math</Filter>
+    </ClCompile>
+    <ClCompile Include="sdk\math\color_t.cpp">
+      <Filter>sdk\math</Filter>
+    </ClCompile>
+    <ClCompile Include="sdk\math\math.cpp">
+      <Filter>sdk\math</Filter>
+    </ClCompile>
+    <ClCompile Include="sdk\math\vec2_t.cpp">
+      <Filter>sdk\math</Filter>
+    </ClCompile>
+    <ClCompile Include="sdk\math\vec3_t.cpp">
+      <Filter>sdk\math</Filter>
+    </ClCompile>
+    <ClCompile Include="sdk\schema_system\schema_system.cpp">
+      <Filter>sdk\schema_system</Filter>
+    </ClCompile>
+    <ClCompile Include="sdk\sdl\sdl.cpp">
+      <Filter>sdk\sdl</Filter>
+    </ClCompile>
+    <ClCompile Include="minhook\hook.c">
+      <Filter>bibliotekebi romelic gamomadgeba\minhook</Filter>
+    </ClCompile>
+    <ClCompile Include="minhook\trampoline.c">
+      <Filter>bibliotekebi romelic gamomadgeba\minhook</Filter>
+    </ClCompile>
+    <ClCompile Include="minhook\buffer.c">
+      <Filter>bibliotekebi romelic gamomadgeba\minhook</Filter>
+    </ClCompile>
+    <ClCompile Include="minhook\hde\hde32.c">
+      <Filter>bibliotekebi romelic gamomadgeba\minhook\hde</Filter>
+    </ClCompile>
+    <ClCompile Include="minhook\hde\hde64.c">
+      <Filter>bibliotekebi romelic gamomadgeba\minhook\hde</Filter>
+    </ClCompile>
+    <ClCompile Include="rabdas.h">
+      <Filter>sdk\interfaces</Filter>
+    </ClCompile>
+    <ClCompile Include="scanner.cpp">
+      <Filter>mtavari racxebi</Filter>
+    </ClCompile>
+    <ClCompile Include="virtual.cpp">
+      <Filter>virtual</Filter>
+    </ClCompile>
+    <ClCompile Include="cvar.cpp">
+      <Filter>sdk\interfaces</Filter>
+    </ClCompile>
+    <ClCompile Include="schema_manager.cpp">
+      <Filter>sdk\schema_system</Filter>
+    </ClCompile>
+    <ClCompile Include="pointer.cpp">
+      <Filter>sdk\interfaces</Filter>
+    </ClCompile>
+    <ClCompile Include="kiero\kiero.cpp">
+      <Filter>bibliotekebi romelic gamomadgeba\kiero</Filter>
+    </ClCompile>
+    <ClCompile Include="imgui\imgui_widgets.cpp">
+      <Filter>bibliotekebi romelic gamomadgeba\imgui</Filter>
+    </ClCompile>
+    <ClCompile Include="imgui\imgui.cpp">
+      <Filter>bibliotekebi romelic gamomadgeba\imgui</Filter>
+    </ClCompile>
+    <ClCompile Include="imgui\imgui_draw.cpp">
+      <Filter>bibliotekebi romelic gamomadgeba\imgui</Filter>
+    </ClCompile>
+    <ClCompile Include="imgui\imgui_tables.cpp">
+      <Filter>bibliotekebi romelic gamomadgeba\imgui</Filter>
+    </ClCompile>
+    <ClCompile Include="imgui\backends\imgui_impl_win32.cpp">
+      <Filter>bibliotekebi romelic gamomadgeba\imgui\backends</Filter>
+    </ClCompile>
+    <ClCompile Include="imgui\backends\imgui_impl_dx11.cpp">
+      <Filter>bibliotekebi romelic gamomadgeba\imgui\backends</Filter>
+    </ClCompile>
+    <ClCompile Include="esp.cpp">
+      <Filter>mtavari racxebi\xakebi</Filter>
+    </ClCompile>
+    <ClCompile Include="renderer.cpp">
+      <Filter>sdk\renderer</Filter>
+    </ClCompile>
+    <ClCompile Include="aimbot.cpp">
+      <Filter>mtavari racxebi\xakebi</Filter>
+    </ClCompile>
+    <ClCompile Include="load_materials.cpp">
+      <Filter>mtavari racxebi\cache</Filter>
+    </ClCompile>
+  </ItemGroup>
+</Project>
