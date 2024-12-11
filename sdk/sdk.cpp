@@ -40,7 +40,7 @@ std::uint8_t* erahaerhaerh(std::uint8_t* address, std::uint32_t rva_offset, std:
 }
 void sdk::update_global_vars()
 {
-	interfaces::globals = *reinterpret_cast<c_global_vars**>(scanner::resolve_rip(scanner::pattern_scan(L"client.dll", "48 89 0D ? ? ? ? 48 89 41"), 3, 7));
+	interfaces::globals = *reinterpret_cast<c_global_vars**>(scanner::resolve_rip(scanner::pattern_scan(L"client.dll", "48 8B 35 ? ? ? ? 44 8B F0"), 3, 7));
 }
 
 void sdk::update_screen_size()
