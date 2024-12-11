@@ -284,14 +284,14 @@ void*GetModuleBaseHandle(const wchar_t* wszModuleName)
 bool interfaces::initialize()
 {
 	interfaces::client = get_interface<i_client>(L"client.dll", "Source2Client002");
-	interfaces::csgo_input = *reinterpret_cast<i_csgo_input**>(aaaaaa(pattern_scan(L"client.dll", "48 8B 0D ? ? ? ? E8 ? ? ? ? 8B BE ? ? ? ? 44 8B F0 85 FF 78 04 FF C7 EB 03"), 3, 7));
+	interfaces::csgo_input = *reinterpret_cast<i_csgo_input**>(aaaaaa(pattern_scan(L"client.dll", "48 8B 0D ? ? ? ? 4C 8D 8F ? ? ? ? 45 33 FF"), 3, 7));
 	interfaces::engine = get_interface<i_engine_client>(L"engine2.dll", "Source2EngineToClient001");
 	interfaces::entity_list = *reinterpret_cast<i_entity_list**>(aaaaaa(pattern_scan(L"client.dll", "48 8B 0D ?? ?? ?? ?? 48 89 7C 24 ?? 8B FA C1 EB"), 3, 7));
 	interfaces::input_system = get_interface<i_input_system>(L"inputsystem.dll", "InputSystemVersion001");
 	//interfaces::renderer = **reinterpret_cast<i_renderer***>(aaaaaa(pattern_scan(L"rendersystemdx11.dll", "66 0F 7F 05 ? ? ? ? 66 0F 7F 0D ? ? ? ? 48 89 35"), 4, 8));
 	interfaces::schema_system = get_interface<CSchemaSystem>(L"schemasystem.dll", "SchemaSystem_001");
-	interfaces::trace = *reinterpret_cast<i_trace**>(aaaaaa(pattern_scan(L"client.dll", "4C 8B 3D ? ? ? ? 24 C9 0C 49 66 0F 7F 45 ?"), 3, 7));
-	interfaces::globals = *reinterpret_cast<c_global_vars**>(aaaaaa(pattern_scan(L"client.dll", "48 89 0D ? ? ? ? 48 89 41"), 3, 7));
+	interfaces::trace = *reinterpret_cast<i_trace**>(aaaaaa(pattern_scan(L"client.dll", "4C 8B 35 ? ? ? ? 24 C9"), 3, 7));//didnt supply startpos and endpos to Script TraceLine call
+	interfaces::globals = *reinterpret_cast<c_global_vars**>(aaaaaa(pattern_scan(L"client.dll", "48 8B 35 ? ? ? ? 44 8B F0"), 3, 7)); //%3.1f  (%s,%d) <-- (%s)\n
 	interfaces::material_system = get_interface<IMaterialSystem2>(L"materialsystem2.dll", "VMaterialSystem2_001");
 	const auto pTier0Handle = GetModuleBaseHandle(L"tier0.dll");
 	interfaces::memalloc = *reinterpret_cast<IMemAlloc**>(GetExportAddress(pTier0Handle, "g_pMemAlloc"));
@@ -301,9 +301,9 @@ bool interfaces::initialize()
 	interfaces::fnUtlBufferPutString = reinterpret_cast<decltype(fnUtlBufferPutString)>(GetExportAddress(pTier0Handle, "?PutString@CUtlBuffer@@QEAAXPEBD@Z"));
 	interfaces::fnUtlBufferEnsureCapacity = reinterpret_cast<decltype(fnUtlBufferEnsureCapacity)>(GetExportAddress(pTier0Handle, "?EnsureCapacity@CUtlBuffer@@QEAAXH@Z"));
 	*/
-	interfaces::fnCreateMaterial = reinterpret_cast<decltype(fnCreateMaterial)>(pattern_scan(L"materialsystem2.dll", "48 89 5C 24 08 48 89 6C 24 18 56 57 41 56 48 81 EC 00 01 00 00"));
+	//interfaces::fnCreateMaterial = reinterpret_cast<decltype(fnCreateMaterial)>(pattern_scan(L"materialsystem2.dll", "48 89 5C 24 08 48 89 6C 24 18 56 57 41 56 48 81 EC 00 01 00 00"));
 
-	if (!interfaces::memalloc || !interfaces::fnCreateMaterial || !interfaces::fnLoadKV3 || !interfaces::material_system || !interfaces::csgo_input || !interfaces::engine || !interfaces::entity_list || !interfaces::input_system || !interfaces::schema_system || !interfaces::trace || !interfaces::globals)
+	if (!interfaces::memalloc || !interfaces::fnLoadKV3 || !interfaces::material_system || !interfaces::csgo_input || !interfaces::engine || !interfaces::entity_list || !interfaces::input_system || !interfaces::schema_system || !interfaces::trace || !interfaces::globals)
 	{
 		std::cout << "racxa ver chaitvirta" << std::endl;
 		std::cout << "csgo_input" << interfaces::csgo_input << std::endl;
