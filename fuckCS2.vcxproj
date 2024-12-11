@@ -158,13 +158,13 @@
   <ItemGroup>
     <ClInclude Include="aimbot.hpp" />
     <ClInclude Include="chams.hpp" />
-    <ClInclude Include="client.dll.hpp" />
     <ClInclude Include="CRC.h" />
     <ClInclude Include="cvar.hpp" />
     <ClInclude Include="entity_handle.h" />
     <ClInclude Include="esp.hpp" />
     <ClInclude Include="fnv1a.hpp" />
     <ClInclude Include="framework.h" />
+    <ClInclude Include="offsets.h" />
     <ClInclude Include="hooks.hpp" />
     <ClInclude Include="imgui\backends\imgui_impl_dx11.h" />
     <ClInclude Include="imgui\backends\imgui_impl_win32.h" />
@@ -187,7 +187,6 @@
     <ClInclude Include="minhook\hde\table64.h" />
     <ClInclude Include="minhook\MinHook.h" />
     <ClInclude Include="minhook\trampoline.h" />
-    <ClInclude Include="offsets.hpp" />
     <ClInclude Include="pch.h" />
     <ClInclude Include="pe64.h" />
     <ClInclude Include="pointer.hpp" />

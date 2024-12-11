@@ -74,12 +74,6 @@
     <ClInclude Include="pch.h">
       <Filter>compiler shit</Filter>
     </ClInclude>
-    <ClInclude Include="offsets.hpp">
-      <Filter>offset shit</Filter>
-    </ClInclude>
-    <ClInclude Include="client.dll.hpp">
-      <Filter>offset shit</Filter>
-    </ClInclude>
     <ClInclude Include="hooks.hpp">
       <Filter>mtavari racxebi\headers</Filter>
     </ClInclude>
@@ -253,6 +247,9 @@
     </ClInclude>
     <ClInclude Include="utlbuffer.h">
       <Filter>sdk</Filter>
+    </ClInclude>
+    <ClInclude Include="offsets.h">
+      <Filter>mtavari racxebi</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

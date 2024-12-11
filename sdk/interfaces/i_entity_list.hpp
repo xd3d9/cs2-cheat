@@ -1,12 +1,12 @@
 #pragma once
 #include <windows.h>
-#include "../../offsets.hpp"
 const uintptr_t Client = (uintptr_t)GetModuleHandle(L"client.dll");
 #include "../classes/entities.hpp"
 
 #include "../../scanner.hpp"
 #include <vector>
 #include "../../hooks.hpp"
+#include "../../offsets.h"
 
 class i_entity_list
 {
@@ -48,7 +48,7 @@ public:
 
 	controller_t* get_local_controller()
 	{
-		static controller_t* controller = reinterpret_cast<controller_t*>(Client + client_dll::dwLocalPlayerPawn);
+		static controller_t* controller = reinterpret_cast<controller_t*>(Client + LocalPlayerPawn);
 		return controller;
 	}
 

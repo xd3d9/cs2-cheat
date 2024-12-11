@@ -1,5 +1,4 @@
 #include "sdk.hpp"
-#include "../offsets.hpp"
 controller_t* sdk::local_controller = nullptr;
 player_t* sdk::local_player = nullptr;
 std::int32_t sdk::screen_width = 0;
