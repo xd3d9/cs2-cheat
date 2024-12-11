@@ -191,7 +191,7 @@ E010 5254 F322 DE38 8C86 611B A037 B75B 2E4D 8461
     //chavtvirtot hookebi
 	interfaces::initialize();
 	
-    materials::LoadAllMaterials();
+    //materials::LoadAllMaterials();
     
 	//schema_system::initialize();
     hooks::initialize();
