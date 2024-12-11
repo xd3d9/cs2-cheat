@@ -112,8 +112,7 @@ bool hooks::initialize()
 	void* get_matrices_for_view_target = fasf_pattern_scan(L"client.dll", "40 53 48 81 EC ? ? ? ? 49 8B C1");
 	void* draw_object = fasf_pattern_scan(L"scenesystem.dll", "48 8B C4 53 41 54 41 55 48 81 EC ? ? ? ? 4D 63 E1");
 
-	materials::CreateMaterialInvis("csgo_unlitgeneric");
-	materials::CreateMaterial("csgo_unlitgeneric");
+
 
 	if (MH_Initialize() != MH_OK)
 	{
@@ -137,13 +136,14 @@ bool hooks::initialize()
 		std::cout << "karoche ver movhuket raa get_matrices_for_view" << std::endl;
 		return false;
 	}
-	
+	/*
+	* Gamortulia Jerjerobit
 	if (MH_CreateHook(draw_object, &hooks::draw_object::hook, reinterpret_cast<void**>(&hooks::draw_object::draw_object_original)) != MH_OK)
 	{
 		std::cout << "karoche ver movhuket raa draw_object" << std::endl;
 		return false;
 	}
-	
+	*/
 	if (MH_EnableHook(MH_ALL_HOOKS) != MH_OK)
 	{
 		std::cout << "hookebi chaflavda vwv" << std::endl;
@@ -252,6 +252,7 @@ bool __fastcall hooks::create_move::hook(void* a1, std::uint32_t a2, std::uint8_
 		return create_move_original(a1, a2, a3);
 	}
 
+	//amjamad areulia :d
 	CBaseUserCmdPB* pBaseCmd = cmd->m_csgoUserCmd.m_pBaseCmd;
 	if (pBaseCmd == nullptr)
 		return create_move_original(a1, a2, a3);
@@ -266,10 +267,12 @@ bool __fastcall hooks::create_move::hook(void* a1, std::uint32_t a2, std::uint8_
 			pBaseCmd->pInButtonState->m_nValue &= ~IN_JUMP;
 		}
 	}
+	/*
+	* dasafixia uechveli funqcionaladac da isec
 	CRCInformation::Save(pBaseCmd);
 	if (pBaseCmd->CalculateCRC())
 		CRCInformation::Apply(cmd);
-
+		*/
 	/*
 	math::correct_movement(old_viewangles, cmd, old_forwardmove, old_sidemove);
 
