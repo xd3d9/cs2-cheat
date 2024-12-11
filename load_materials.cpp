@@ -76,7 +76,7 @@ __inline void* MemorySet(void* pDestination, const std::uint8_t uByte, std::size
 static CKeyValues3* CreateMaterialResource()
 {
 	using fnSetTypeKV3 = CKeyValues3 * (__fastcall*)(CKeyValues3*, unsigned int, unsigned int);
-	static const fnSetTypeKV3 oSetTypeKV3 = reinterpret_cast<fnSetTypeKV3>(scanner::pattern_scan(L"client.dll", "40 53 48 83 EC 20 48 8B 01 48 8B D9 44"));
+	static const fnSetTypeKV3 oSetTypeKV3 = reinterpret_cast<fnSetTypeKV3>(scanner::pattern_scan(L"client.dll", "E8 ? ? ? ? 4C 89 7B 30"));//
 
 #ifdef CS_PARANOID
 	CS_ASSERT(oSetTypeKV3 != nullptr);
