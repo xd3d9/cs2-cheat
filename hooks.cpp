@@ -156,7 +156,7 @@ void __fastcall hooks::draw_object::hook(void* pAnimatableSceneObjectDesc, void*
 		return draw_object_original(pAnimatableSceneObjectDesc, pDx11, arrMeshDraw, nDataCount, pSceneView, pSceneLayer, pUnk, pUnk2);
 	
 	switch (const auto id =
-		*reinterpret_cast<int*>(reinterpret_cast<std::uintptr_t>(arrMeshDraw->pObjectInfo) + 176u);
+		*reinterpret_cast<int*>(reinterpret_cast<std::uintptr_t>(arrMeshDraw->pObjectInfo) + 176u); // aq agdebs errors radganac pObjectInfo-a gasasworebeli :d shemdeg commitshi davfixav
 	id) {
 	case 113:
 	case 104: {
