@@ -2,48 +2,6 @@
 
 #include <malloc.h>
 
-
-void chams_material::LoadChamsMaterial() {
-	CMeshData* pData = reinterpret_cast<CMeshData*>(_malloca(0x1050));
-
-	CMaterial2** material_prototype;
-
-	interfaces::material_system->FindOrCreateFromResource(&material_prototype, "materials/dev/primary_white.vmat");
-	interfaces::material_system->SetCreateDataByMaterial(pData, &material_prototype);
-	/**/
-	pData->SetShaderType("csgo_unlitgeneric.vfx");
-	pData->SetMaterialFunction("F_DISABLE_Z_BUFFERING", 1);
-	pData->SetMaterialFunction("F_BLEND_MODE", 1);
-	pData->SetMaterialFunction("F_TRANSLUCENT", 1);
-
-	//CMaterial2** custom_material;
-
-	interfaces::material_system->CreateMaterial(&chams_material::visible_material, "visible", pData);
-	pData->SetMaterialFunction("F_TRANSLUCENT", 0);
-	//interfaces::material_system->CreateMaterial(&chams::invisible_material, "invisible", pData);
-	//chams::invisible_material = material_prototype;
-}
-
-void chams_material::LoadChamsMaterialInvisible() {
-	CMeshData* pData = reinterpret_cast<CMeshData*>(_malloca(0x1050));
-
-	CMaterial2** material_prototype;
-
-	interfaces::material_system->FindOrCreateFromResource(&material_prototype, "materials/dev/primary_white.vmat");
-	interfaces::material_system->SetCreateDataByMaterial(pData, &material_prototype);
-	/**/
-	pData->SetShaderType("csgo_unlitgeneric.vfx");
-	pData->SetMaterialFunction("F_BLEND_MODE", 1);
-	pData->SetMaterialFunction("F_TRANSLUCENT", 1);
-
-	//CMaterial2** custom_material;
-
-	interfaces::material_system->CreateMaterial(&chams_material::invisible_material, "invisible", pData);
-	//interfaces::material_system->CreateMaterial(&chams::invisible_material, "invisible", pData);
-	//chams::invisible_material = material_prototype;
-}
-
-
 __inline void* MemorySet(void* pDestination, const std::uint8_t uByte, std::size_t nCount)
 {
 #ifdef CS_COMPILER_MSC
@@ -76,12 +34,12 @@ __inline void* MemorySet(void* pDestination, const std::uint8_t uByte, std::size
 static CKeyValues3* CreateMaterialResource()
 {
 	using fnSetTypeKV3 = CKeyValues3 * (__fastcall*)(CKeyValues3*, unsigned int, unsigned int);
-	static const fnSetTypeKV3 oSetTypeKV3 = reinterpret_cast<fnSetTypeKV3>(scanner::pattern_scan(L"client.dll", "E8 ? ? ? ? 4C 89 7B 30"));//
+	static const fnSetTypeKV3 oSetTypeKV3 = reinterpret_cast<fnSetTypeKV3>(scanner::pattern_scan(L"client.dll", "40 53 48 83 EC 20 48 8B 01 48 8B D9 44"));//
 
 #ifdef CS_PARANOID
 	CS_ASSERT(oSetTypeKV3 != nullptr);
 #endif
-
+	std::cout << "osettypekv3 " << oSetTypeKV3 << std::endl;
 	CKeyValues3* pKeyValue = new CKeyValues3[0x10];
 	return oSetTypeKV3(pKeyValue, 1U, 6U);
 }
@@ -112,6 +70,8 @@ void materials::CreateMaterial(const char* szName)
 	CKeyValues3* kv3 = (CKeyValues3*)(buffer + 0x100);
 	*/
 	CKeyValues3* pKeyValues3 = CreateMaterialResource();
+
+	std::cout << "pkeyvalues " << pKeyValues3 << std::endl;
 
 	KV3ID_t kv3ID;
 	kv3ID.szName = szName;
@@ -172,7 +132,6 @@ void materials::LoadAllMaterials() {
 	chams::LoadChamsMaterial("invisible", chams::invisible_material);
 	*/
 	//CreateMaterial("visible");
-	materials::CreateMaterialInvis("csgo_unlitgeneric");
 	materials::CreateMaterial("csgo_unlitgeneric");
 	//chams_material::LoadChamsMaterial();
 	//chams_material::LoadChamsMaterialInvisible();

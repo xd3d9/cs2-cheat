@@ -109,7 +109,7 @@ bool hooks::initialize()
 	void* level_init_target = fasf_pattern_scan(L"client.dll", "48 89 5C 24 ? 56 48 83 EC ? 48 8B 0D ? ? ? ? 48 8B F2");
 	void* create_move_target = get_virtual(interfaces::csgo_input, csgo_input_vtable::CREATEMOVE);
 	void* get_matrices_for_view_target = fasf_pattern_scan(L"client.dll", "40 53 48 81 EC ? ? ? ? 49 8B C1");
-	void* draw_object = fasf_pattern_scan(L"scenesystem.dll", "48 8B C4 53 41 54 41 55 48 81 EC ? ? ? ? 4D 63 E1");
+	void* draw_object = fasf_pattern_scan(L"scenesystem.dll", "48 8B C4 48 89 50 ? 53");
 
 
 
@@ -135,14 +135,12 @@ bool hooks::initialize()
 		std::cout << "karoche ver movhuket raa get_matrices_for_view" << std::endl;
 		return false;
 	}
-	/*
-	* Gamortulia Jerjerobit
+
 	if (MH_CreateHook(draw_object, &hooks::draw_object::hook, reinterpret_cast<void**>(&hooks::draw_object::draw_object_original)) != MH_OK)
 	{
 		std::cout << "karoche ver movhuket raa draw_object" << std::endl;
 		return false;
 	}
-	*/
 	if (MH_EnableHook(MH_ALL_HOOKS) != MH_OK)
 	{
 		std::cout << "hookebi chaflavda vwv" << std::endl;
@@ -183,14 +181,14 @@ void __fastcall hooks::draw_object::hook(void* pAnimatableSceneObjectDesc, void*
 		
 		//static CStrongHandle<CMaterial2> matInvis = materials::CreateMaterialInvis("invisible");
 		arrMeshDraw->pMaterial = materials::invisible_material;
-		arrMeshDraw->colValue = color_t(int(chams::kedlebis_color[0] * 255), int(chams::kedlebis_color[1] * 255), int(chams::kedlebis_color[2] * 255), 255);
+		arrMeshDraw->colValue = ByteColorRGBA(int(chams::kedlebis_color[0] * 255), int(chams::kedlebis_color[1] * 255), int(chams::kedlebis_color[2] * 255), 255);
 
 		draw_object_original(pAnimatableSceneObjectDesc, pDx11, arrMeshDraw, nDataCount, pSceneView, pSceneLayer, pUnk,
 			pUnk2);
 
 		//static CStrongHandle<CMaterial2> mat = materials::CreateMaterial("visible");
 		arrMeshDraw->pMaterial = materials::visible_material;
-		arrMeshDraw->colValue = color_t(int(chams::visible_color[0] * 255), int(chams::visible_color[1] * 255), int(chams::visible_color[2] * 255), 255);
+		arrMeshDraw->colValue = ByteColorRGBA(int(chams::visible_color[0] * 255), int(chams::visible_color[1] * 255), int(chams::visible_color[2] * 255), 255);
 		/*
 		if (!chams::chartuli) break;
 

@@ -301,9 +301,9 @@ bool interfaces::initialize()
 	interfaces::fnUtlBufferPutString = reinterpret_cast<decltype(fnUtlBufferPutString)>(GetExportAddress(pTier0Handle, "?PutString@CUtlBuffer@@QEAAXPEBD@Z"));
 	interfaces::fnUtlBufferEnsureCapacity = reinterpret_cast<decltype(fnUtlBufferEnsureCapacity)>(GetExportAddress(pTier0Handle, "?EnsureCapacity@CUtlBuffer@@QEAAXH@Z"));
 	*/
-	//interfaces::fnCreateMaterial = reinterpret_cast<decltype(fnCreateMaterial)>(pattern_scan(L"materialsystem2.dll", "48 89 5C 24 08 48 89 6C 24 18 56 57 41 56 48 81 EC 00 01 00 00"));
+	interfaces::fnCreateMaterial = reinterpret_cast<decltype(fnCreateMaterial)>(pattern_scan(L"materialsystem2.dll", "48 89 5C 24 ? 48 89 6C 24 ? 56 57 41 56 48 81 EC ? ? ? ? 48 8B 05 ? ? ? ?")); //RESOURCE_TYPE_MATERIAL
 
-	if (!interfaces::memalloc || !interfaces::fnLoadKV3 || !interfaces::material_system || !interfaces::csgo_input || !interfaces::engine || !interfaces::entity_list || !interfaces::input_system || !interfaces::schema_system || !interfaces::trace || !interfaces::globals)
+	if (!interfaces::memalloc || !interfaces::fnLoadKV3 || !interfaces::material_system || !interfaces::csgo_input || !interfaces::engine || !interfaces::entity_list || !interfaces::input_system || !interfaces::schema_system || !interfaces::trace || !interfaces::globals || !interfaces::fnCreateMaterial)
 	{
 		std::cout << "racxa ver chaitvirta" << std::endl;
 		std::cout << "csgo_input" << interfaces::csgo_input << std::endl;
