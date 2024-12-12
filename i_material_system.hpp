@@ -21,6 +21,130 @@ private:                                            \
     std::uint8_t COMBINE2(pad_, __COUNTER__)[sz];   \
 public:
 
+class ByteColorRGBA {
+public:
+	unsigned char r, g, b, a;
+
+	ByteColorRGBA(float _r = 0, float _g = 0, float _b = 0, float _a = 0) {
+		r = static_cast<unsigned char>(_r);
+		g = static_cast<unsigned char>(_g);
+		b = static_cast<unsigned char>(_b);
+		a = static_cast<unsigned char>(_a);
+	}
+
+	ByteColorRGBA operator+(ByteColorRGBA color) {
+		return ByteColorRGBA(r + color.r, g + color.g, b + color.b, a + color.a);
+	}
+
+	ByteColorRGBA operator+(unsigned char n) {
+		return ByteColorRGBA(r + n, g + n, b + n, a + n);
+	}
+
+	ByteColorRGBA operator+=(ByteColorRGBA color) {
+		r += color.r;
+		g += color.g;
+		b += color.b;
+		a += color.a;
+
+		return *this;
+	}
+
+	ByteColorRGBA operator+=(unsigned char n) {
+		r += n;
+		g += n;
+		b += n;
+		a += n;
+
+		return *this;
+	}
+
+	ByteColorRGBA operator-(ByteColorRGBA color) {
+		return ByteColorRGBA(r - color.r, g - color.g, b - color.b, a - color.a);
+	}
+
+	ByteColorRGBA operator-(unsigned char n) {
+		return ByteColorRGBA(r - n, g - n, b - n, a - n);
+	}
+
+	ByteColorRGBA operator-=(ByteColorRGBA color) {
+		r -= color.r;
+		g -= color.g;
+		b -= color.b;
+		a -= color.a;
+
+		return *this;
+	}
+
+	ByteColorRGBA operator-=(unsigned char n) {
+		r -= n;
+		g -= n;
+		b -= n;
+		a -= n;
+
+		return *this;
+	}
+
+	ByteColorRGBA operator/(ByteColorRGBA color) {
+		return ByteColorRGBA(r / color.r, g / color.g, b / color.b, a / color.a);
+	}
+
+	ByteColorRGBA operator/(unsigned char n) {
+		return ByteColorRGBA(r / n, g / n, b / n, a / n);
+	}
+
+	ByteColorRGBA operator/=(ByteColorRGBA color) {
+		r /= color.r;
+		g /= color.g;
+		b /= color.b;
+		a /= color.a;
+
+		return *this;
+	}
+
+	ByteColorRGBA operator/=(unsigned char n) {
+		r /= n;
+		g /= n;
+		b /= n;
+		a /= n;
+
+		return *this;
+	}
+
+	ByteColorRGBA operator*(ByteColorRGBA color) {
+		return ByteColorRGBA(r * color.r, g * color.g, b * color.b, a * color.a);
+	}
+
+	ByteColorRGBA operator*(unsigned char n) {
+		return ByteColorRGBA(r * n, g * n, b * n, a * n);
+	}
+
+	ByteColorRGBA operator*=(ByteColorRGBA color) {
+		r *= color.r;
+		g *= color.g;
+		b *= color.b;
+		a *= color.a;
+
+		return *this;
+	}
+
+	ByteColorRGBA operator*=(unsigned char n) {
+		r *= n;
+		g *= n;
+		b *= n;
+		a *= n;
+
+		return *this;
+	}
+
+	bool operator==(ByteColorRGBA color) {
+		return r == color.r && g == color.g && b == color.b && a == color.a;
+	}
+
+	bool operator!=(ByteColorRGBA color) {
+		return !(*this == color);
+	}
+};
+
 // idk
 struct MaterialKeyVar_t
 {
@@ -65,38 +189,16 @@ class CSceneAnimatableObject
 #define CS_ASSERT(EXPRESSION) static_cast<void>(!!(EXPRESSION) || (CS_DEBUG_BREAK(), 0))
 class CMeshData
 {
+private:
+	char pad_0000[0x18];
 public:
-	void SetShaderType(const char* szShaderName)
-	{
-		// @ida: #STR: shader, spritecard.vfx
-		using fnSetMaterialShaderType = void(__fastcall*)(void*, MaterialKeyVar_t, const char*, int);
-		static auto oSetMaterialShaderType = reinterpret_cast<fnSetMaterialShaderType>(scanner::pattern_scan(L"particles.dll", "48 89 5C 24 ? 48 89 6C 24 ? 56 57 41 54 41 56 41 57 48 83 EC ? 0F B6 01 45 0F B6 F9 8B 2A 4D 8B E0 4C 8B 72 ? 48 8B F9 C0 E8 ? 24 ? 3C ? 74 ? 41 B0 ? B2 ? E8 ? ? ? ? 0F B6 07 33 DB C0 E8 ? 24 ? 3C ? 75 ? 48 8B 77 ? EB ? 48 8B F3 4C 8D 44 24 ? C7 44 24 ? ? ? ? ? 48 8D 54 24 ? 89 6C 24 ? 48 8B CE 4C 89 74 24 ? E8 ? ? ? ? 8B D0 83 F8 ? 75 ? 45 33 C9 89 6C 24 ? 4C 8D 44 24 ? 4C 89 74 24 ? 48 8B D7 48 8B CE E8 ? ? ? ? 8B D0 0F B6 0F C0 E9 ? 80 E1 ? 80 F9 ? 75 ? 48 8B 4F ? EB ? 48 8B CB 8B 41 ? 85 C0 74 ? 48 8D 59 ? 83 F8 ? 76 ? 48 8B 1B 48 63 C2 4D 85 E4"));
-
-
-		MaterialKeyVar_t shaderVar(0x162C1777, "shader");
-		oSetMaterialShaderType(this, shaderVar, szShaderName, 0x18);
-	}
-
-	void SetMaterialFunction(const char* szFunctionName, int nValue)
-	{
-		using fnSetMaterialFunction = void(__fastcall*)(void*, MaterialKeyVar_t, int, int);
-		static auto oSetMaterialFunction = reinterpret_cast<fnSetMaterialFunction>(scanner::pattern_scan(L"particles.dll", "48 89 5C 24 ? 48 89 6C 24 ? 56 57 41 54 41 56 41 57 48 83 EC ? 0F B6 01 45 0F B6 F9 8B 2A 48 8B F9"));
-
-#ifdef CS_PARANOID
-		CS_ASSERT(oSetMaterialFunction != nullptr);
-#endif
-
-		MaterialKeyVar_t functionVar(szFunctionName, true);
-		oSetMaterialFunction(this, functionVar, nValue, 0x18);
-	}
-
-	MEM_PAD(0x18); // 0x0
-	CSceneAnimatableObject* pSceneAnimatableObject; // 0x18
-	CMaterial2* pMaterial; // 0x20
-	MEM_PAD(0x18); // 0x28
-	color_t colValue; // 0x40
-	MEM_PAD(0x4); // 0x44
-	CObjectInfo* pObjectInfo; // 0x48
+	CSceneAnimatableObject* sceneObject;
+	CMaterial2* pMaterial;
+private:
+	char pad_0020[0x18];
+public:
+	ByteColorRGBA colValue;
+	CObjectInfo* pObjectInfo;
 };
 
 #include "memory.h"
