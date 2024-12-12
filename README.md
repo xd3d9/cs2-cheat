@@ -1,13 +1,12 @@
-CS2 cheti,, bolos ro vnaxe mushaobda amjamindeli situacia ar vici :):):) aimbot da rac viewangles/subtick exeba gafuchebulia radganac checkebi daamates cs2 shi da veghar davfiqse ;))) tkvenit shegidzliat dafixot tuarada ertxelac vichalicheb dadavqisav mtlianad
+CS2-ის ჩეთი რომელზეც ვმუშაობდი ასე თუ ისე დიდიხანი რადგანაც ვცდილობდი შემსწავლა და შევსულიყავი ისევ CS ქომუნითიში, რადგანაც ახალი იყო ყველასთვის ყველაფერი და ახალი ექსპლოიტები და ახალი დაცვები ჩნდებოდა ყოველკვირას ძალიან მიმიზიდა ისევ ამ თამაშმა მაგრამ სულ რეიჯ ჩეთს ვაკეთებდი და მეთქი რადგანაც ძალიან უაზრო გახდა CS2-ში რეიჯ ჰვჰ გადავწყვიტე რომ ლეჯიტი დამეწერა და საინტერესო გამოცდილება იყო, ამჟამად 11 დეკემბრის კომიტების/აბდეითისთვის არაფერი არ მუშაობს რადგანაც ღამეა და მეზარება ერთბაშად ყველაფრის გასწორება, მაგრამ ელოდეთ აბდეითებს თუ ისევ ვიყავი მოტივაციაზე ამის გაკეთების. მუშაობს მხოლოდ ESP დანარჩენი კიარა უმეტესი არაფერი არ მუშაობს.
 
-[UnknownCheats](https://www.unknowncheats.me/forum/counter-strike-2-a/)
+ასევე ვეცდები შემდეგ განახლებებში შემოვიტანო უკეთესი ინტერფეისი/მენიუ თორე ამჟამინდელი არ არის მოსაწონი. 😁
 
-struktura csgo stan axlosaa amitomac vinc csgodan gadmodixart gagimartivdebat cs2 chetis awkoba,, es magaliti ikos tkventvis 😋😋 tavisuflad shegidzliat gamoikenot nebismieri nawili am proektidan
+გმადლობთ რომ ნახულობთ ამ პროექტს და იმედია რომელიმე ამ პროექტის კოდი გამოგადგებათ, მე კი ვეცდები გავანახლო და დავუმატო ახალი ფუნქციები.
 
-Chets Akvs Shemdgomi Funkciebi:
-- Bunnyhop (protobufs fix esachiroeba)
-- ESP
-- Chams
-- Aimbot (protobufs fix esachiroeba)
+- Bunnyhop (პროტობუფსა და ბუტონებს ფიქსი ესაჭიროება) 🛑
+- ESP ✅
+- Chams (საჭიროებს სიგნატურების გნახლება) ⚠
+- Aimbot (პროტობუფსა და ბუტონებს ფიქსი ესაჭიროება) 🛑
 
 ![image](https://github.com/user-attachments/assets/638faa37-d9d7-4c36-8f2f-19729e0f909e)
