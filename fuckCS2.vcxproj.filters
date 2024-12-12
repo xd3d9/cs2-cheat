@@ -359,4 +359,9 @@
       <Filter>mtavari racxebi\cache</Filter>
     </ClCompile>
   </ItemGroup>
+  <ItemGroup>
+    <None Include="README.md">
+      <Filter>mtavari racxebi</Filter>
+    </None>
+  </ItemGroup>
 </Project>
