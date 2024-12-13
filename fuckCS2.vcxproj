@@ -216,7 +216,6 @@
     <ClInclude Include="sdk\sdl\sdl.hpp" />
     <ClInclude Include="utlbuffer.h" />
     <ClInclude Include="virtual.hpp" />
-    <ClInclude Include="vmatrix.hpp" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="aimbot.cpp" />

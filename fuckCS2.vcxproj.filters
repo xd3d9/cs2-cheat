@@ -209,9 +209,6 @@
     <ClInclude Include="imgui\backends\imgui_impl_dx11.h">
       <Filter>bibliotekebi romelic gamomadgeba\imgui\backends</Filter>
     </ClInclude>
-    <ClInclude Include="vmatrix.hpp">
-      <Filter>compiler shit</Filter>
-    </ClInclude>
     <ClInclude Include="esp.hpp">
       <Filter>mtavari racxebi\xakebi</Filter>
     </ClInclude>
