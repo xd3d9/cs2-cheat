@@ -189,17 +189,17 @@ class CSceneAnimatableObject
 #define CS_ASSERT(EXPRESSION) static_cast<void>(!!(EXPRESSION) || (CS_DEBUG_BREAK(), 0))
 class CMeshData
 {
-private:
-	char pad_0000[0x18];
 public:
-	CSceneAnimatableObject* sceneObject;
-	CMaterial2* pMaterial;
-private:
-	char pad_0020[0x18];
-public:
-	ByteColorRGBA colValue;
-	CObjectInfo* pObjectInfo;
-};
+	MEM_PAD(8);
+	CSceneAnimatableObject* m_pSceneObjectOrAnim; //0x0018
+	CMaterial2* m_pMaterial; //0x0020
+	CMaterial2* m_pMaterial2;
+	MEM_PAD(16);
+	CObjectInfo* m_pObjectInfo; //0x0040
+	MEM_PAD(8);
+	color_t m_Color; //0x0050
+	MEM_PAD(20);
+}; //Size: 0x0068
 
 #include "memory.h"
 class IMaterialSystem2

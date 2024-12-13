@@ -131,7 +131,7 @@ void materials::LoadAllMaterials() {
 	chams::LoadChamsMaterial("visible", chams::visible_material);
 	chams::LoadChamsMaterial("invisible", chams::invisible_material);
 	*/
-	//CreateMaterial("visible");
+	CreateMaterial("visible");
 	materials::CreateMaterial("csgo_unlitgeneric");
 	//chams_material::LoadChamsMaterial();
 	//chams_material::LoadChamsMaterialInvisible();

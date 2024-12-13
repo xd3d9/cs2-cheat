@@ -1,6 +1,5 @@
 #pragma once
 #include <cstdint>
-#include "vmatrix.hpp"
 #include <dxgi.h>
 #include "i_material_system.hpp"
 

@@ -152,60 +152,24 @@ bool hooks::initialize()
 
 void __fastcall hooks::draw_object::hook(void* pAnimatableSceneObjectDesc, void* pDx11, CMeshData* arrMeshDraw, int nDataCount, void* pSceneView, void* pSceneLayer, void* pUnk, void* pUnk2)
 {
-	if (!arrMeshDraw || !arrMeshDraw->pMaterial || !arrMeshDraw->pObjectInfo)
+
+	if (!arrMeshDraw || !arrMeshDraw->m_pMaterial || !arrMeshDraw->m_pObjectInfo)
 		return draw_object_original(pAnimatableSceneObjectDesc, pDx11, arrMeshDraw, nDataCount, pSceneView, pSceneLayer, pUnk, pUnk2);
 	
 	switch (const auto id =
-		*reinterpret_cast<int*>(reinterpret_cast<std::uintptr_t>(arrMeshDraw->pObjectInfo) + 176u); // aq agdebs errors radganac pObjectInfo-a gasasworebeli :d shemdeg commitshi davfixav
+		*reinterpret_cast<int*>(reinterpret_cast<std::uintptr_t>(arrMeshDraw->m_pObjectInfo) + 176u); // aq agdebs errors radganac pObjectInfo-a gasasworebeli :d shemdeg commitshi davfixav
 	id) {
 	case 113:
 	case 104: {
-		/*
-		CMeshData* pData = reinterpret_cast<CMeshData*>(_malloca(0x1050));
-		
-		CMaterial2** material_prototype;
-
-		interfaces::material_system->FindOrCreateFromResource(&material_prototype, "materials/dev/primary_white.vmat");
-		interfaces::material_system->SetCreateDataByMaterial(pData, &material_prototype);
-		pData->SetShaderType("csgo_unlitgeneric.vfx");
-		pData->SetMaterialFunction("F_DISABLE_Z_BUFFERING", 1);
-		pData->SetMaterialFunction("F_BLEND_MODE", 1);
-		pData->SetMaterialFunction("F_TRANSLUCENT", 1);
-
-		CMaterial2** custom_material;
-		
-		interfaces::material_system->CreateMaterial(&custom_material, "primary_white", pData);
-		*/
-
 		if (!chams::chartuli) break;
-		
-		//static CStrongHandle<CMaterial2> matInvis = materials::CreateMaterialInvis("invisible");
-		arrMeshDraw->pMaterial = materials::invisible_material;
-		arrMeshDraw->colValue = ByteColorRGBA(int(chams::kedlebis_color[0] * 255), int(chams::kedlebis_color[1] * 255), int(chams::kedlebis_color[2] * 255), 255);
+		arrMeshDraw->m_pMaterial = materials::invisible_material;
+		arrMeshDraw->m_Color = color_t(int(chams::kedlebis_color[0] * 255), int(chams::kedlebis_color[1] * 255), int(chams::kedlebis_color[2] * 255), 255);
 
 		draw_object_original(pAnimatableSceneObjectDesc, pDx11, arrMeshDraw, nDataCount, pSceneView, pSceneLayer, pUnk,
 			pUnk2);
 
-		//static CStrongHandle<CMaterial2> mat = materials::CreateMaterial("visible");
-		arrMeshDraw->pMaterial = materials::visible_material;
-		arrMeshDraw->colValue = ByteColorRGBA(int(chams::visible_color[0] * 255), int(chams::visible_color[1] * 255), int(chams::visible_color[2] * 255), 255);
-		/*
-		if (!chams::chartuli) break;
-
-		if (*chams_material::visible_material == nullptr) break;
-		arrMeshDraw->pMaterial = *chams_material::visible_material;
-		arrMeshDraw->colValue = color_t(int(chams::kedlebis_color[0] * 255), int(chams::kedlebis_color[1] * 255), int(chams::kedlebis_color[2] * 255), 255);
-
-		draw_object_original(pAnimatableSceneObjectDesc, pDx11, arrMeshDraw, nDataCount, pSceneView, pSceneLayer, pUnk,
-			pUnk2);
-
-		if (*chams_material::invisible_material == nullptr) break;
-		//interfaces::material_system->CreateMaterial(&custom_material, "primary_white_invisible", pData);
-		arrMeshDraw->pMaterial = *chams_material::invisible_material;
-		arrMeshDraw->colValue = color_t(int(chams::visible_color[0] * 255), int(chams::visible_color[1] * 255), int(chams::visible_color[2] * 255), 255);
-		//_freea(pData);
-		//custom_material = NULL;
-		*/
+		arrMeshDraw->m_pMaterial = materials::visible_material;
+		arrMeshDraw->m_Color = color_t(int(chams::visible_color[0] * 255), int(chams::visible_color[1] * 255), int(chams::visible_color[2] * 255), 255);
 	} break;
 	default:
 		break;
@@ -226,7 +190,6 @@ void __fastcall hooks::GetMatricesForView::hook(void* rcx, void* view, VMatrix* 
 {
 	get_matrices_for_view_original(rcx, view, pWorldToView, pViewToProjection, pWorldToProjection, pWorldToPixels);
 	math::UpdateViewMatrix(pWorldToProjection);
-	//std::cout << pWorldToProjection << std::endl;
 }
 
 #include <cmath>
@@ -234,7 +197,6 @@ void __fastcall hooks::GetMatricesForView::hook(void* rcx, void* view, VMatrix* 
 
 bool __fastcall hooks::create_move::hook(void* a1, std::uint32_t a2, std::uint8_t a3)
 {
-	//std::cout << "welcome from ccreate move hook" << std::endl;
 	create_move_original(a1, a2, a3);
 
 	//sdk::update_local_controller();
@@ -270,20 +232,6 @@ bool __fastcall hooks::create_move::hook(void* a1, std::uint32_t a2, std::uint8_
 	if (pBaseCmd->CalculateCRC())
 		CRCInformation::Apply(cmd);
 		*/
-	/*
-	math::correct_movement(old_viewangles, cmd, old_forwardmove, old_sidemove);
-
-	cmd->m_csgoUserCmd.m_pBaseCmd->m_flForwardMove = std::clamp(cmd->m_csgoUserCmd.m_pBaseCmd->m_flForwardMove, -450.0f, 450.0f);
-	cmd->m_csgoUserCmd.m_pBaseCmd->m_flSideMove = std::clamp(cmd->m_csgoUserCmd.m_pBaseCmd->m_flSideMove, -450.0f, 450.0f);
-	cmd->m_csgoUserCmd.m_pBaseCmd->m_pViewangles->m_angValue.normalize();
-
-	cmd->m_csgoUserCmd.m_pBaseCmd->m_pViewangles->m_angValue.x = std::clamp(cmd->m_csgoUserCmd.m_pBaseCmd->m_pViewangles->m_angValue.x, -89.0f, 89.0f);
-	cmd->m_csgoUserCmd.m_pBaseCmd->m_pViewangles->m_angValue.y = std::clamp(cmd->m_csgoUserCmd.m_pBaseCmd->m_pViewangles->m_angValue.y, -180.0f, 180.0f);
-	cmd->m_csgoUserCmd.m_pBaseCmd->m_pViewangles->m_angValue.z = 0.0f;
-	*/
-	//std::cout << cmd->m_csgoUserCmd.m_pBaseCmd->m_pViewangles->m_angValue.x << " " << cmd->m_csgoUserCmd.m_pBaseCmd->m_pViewangles->m_angValue.y << std::endl;
-	//std::cout << "health: " << sdk::local_player->m_iHealth() << std::endl;
-	//std::cout << "flags: " << sdk::local_player->flags() << std::endl;
 
 	return false;
 }
